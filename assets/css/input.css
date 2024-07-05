@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .clip {
+        clip-path: polygon(0% 5.8%, 0% 100%, 94.118% 100%, 100% 94%, 100% 0%, 5.882% 0%, 0% 5.8%);
+    }
+
+    .clip-in-1 {
+        clip-path: polygon(96.157% 99.783%, 0.213% 99.783%, 0.213% 3.72%, 3.839% 0.217%, 99.787% 0.217%, 99.787% 96.084%, 96.157% 99.783%);
+    }
+
+    .clip-in-2 {
+        clip-path: polygon(96.157% 99.783%, 0.213% 99.783%, 0.213% 3.72%, 3.839% 0.217%, 99.787% 0.217%, 99.787% 96.084%, 96.157% 99.783%);
+    }
+
+    .clip-1 {
+        clip-path: polygon(0.535% 6.349%, 0.535% 99.603%, 91.444% 99.603%, 99.465% 93.651%, 99.465% 0.397%, 8.556% 0.397%, 0.535% 6.349%);
+    }
+}
+
+@font-face {
+    font-family: 'airbolt';
+    font-weight: 400;
+    src: url('../fonts/airbolt-regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 300;
+    src: url('../fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 400;
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 500;
+    src: url('../fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 600;
+    src: url('../fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 700;
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 800;
+    src: url('../fonts/Poppins-Black.ttf');
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2EC2DD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e4c6a;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/logo-icon.png');
+    background-repeat: no-repeat;
+}
+
+.loader:after {
+    animation: pulse 1s infinite;
+    transform: perspective(336px) translateZ(0px);
+}
+
+@keyframes pulse {
+    to {
+        transform: perspective(336px) translateZ(168px);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    #navbar-right {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    #navbar-right.open {
+        transform: scaleY(1);
+    }
+}
